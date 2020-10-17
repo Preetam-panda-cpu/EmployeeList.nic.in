@@ -1,0 +1,40 @@
+<h1 class="display-5 font-weight-bold text-success text-uppercase">List Of Employees</h1>
+<button (click)="addEmployee()" class="btn btn-success my-2">Add Employee</button>
+<table class="table table-hover table-bordered ">
+    <thead class="table-dark ">
+        <tr>
+            <th> id</th>
+            <th> name</th>
+            <th>doj</th>
+            <th> salary</th>
+            <th> location</th>
+            <th>education</th>
+            <th>gender</th>
+            <th> designation</th>
+            <th> date of birth</th>
+            <th>company</th>
+            <th> exp</th>
+            <th>Delete</th>
+        </tr>
+
+    </thead>
+    <tbody>
+        <tr *ngFor="let emp of EmpData; index as i ">
+            <td>{{ i + 1}}</td>
+            <td>{{emp.emp_name}}</td>
+            <td>{{emp. emp_doj | date}}</td>
+            <td>{{emp.emp_salary | currency}}</td>
+            <td>{{emp. emp_location}}</td>
+            <td>{{emp.emp_education}}</td>
+            <td>{{emp.emp_gender}}</td>
+            <td>{{emp.emp_designation}}</td>
+            <td>{{emp. emp_dob | date}}</td>
+            <td>{{emp. emp_company }}</td>
+            <td>{{emp.emp_year_exp }}</td>
+            <td>
+                <button class="btn btn-sm btn-danger" (click)=deleteEmp(emp)> Delete</button>
+            </td>
+        </tr>
+
+    </tbody>
+</table>
